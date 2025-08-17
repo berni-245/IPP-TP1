@@ -1,8 +1,10 @@
 # Introducción a la Programación Paralela TP1
 
+Este fue el [enunciado](docs/Enunciado%20TP1.pdf).
+
 ## Análisis
 
-Se necesitará tener UV instalado, podés seguir el [tutorial oficial](https://docs.astral.sh/uv/getting-started/installation) para tu sistema operativo.
+Se necesitará tener UV instalado para el entorno virtual con las dependencias, podés seguir el [tutorial oficial](https://docs.astral.sh/uv/getting-started/installation) para instalarlo en tu sistema operativo.
 
 Luego, correr:
 ```bash
