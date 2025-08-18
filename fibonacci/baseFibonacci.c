@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <omp.h>
 
+// The n-result in the fibonacci sequence
 int fib(int n) {
     int i, j;
     if (n<2)
@@ -19,7 +20,7 @@ int fib(int n) {
 int main(int argc, char **argv){
     int n, result;
     char *a = argv[1];
-    n = atoi(a); // The n-result in the fibonacci sequence
+    n = atoi(a);
 
 #pragma omp parallel
     {
