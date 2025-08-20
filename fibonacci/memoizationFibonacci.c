@@ -37,11 +37,16 @@ int main(int argc, char **argv) {
 #pragma omp parallel
     {
 #pragma omp single
-        result = fib(n);
+        {
+            double start = omp_get_wtime();
+            result = fib(n);
+            double end = omp_get_wtime();
+            printf("%.15f\n", end - start);
+        }
     }
-    printf("Result is %d\n", result);
 
     for (int k = 0; k < MAX; k++)
         omp_destroy_lock(&locks[k]);
+
     return 0;
 }

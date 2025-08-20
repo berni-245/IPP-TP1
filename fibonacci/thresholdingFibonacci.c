@@ -4,7 +4,7 @@
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-int fib(int n, int nThreshold) {
+int fib(int n, const int nThreshold) {
     int i, j;
     if (n<2)
         return n;
@@ -23,12 +23,17 @@ int main(int argc, char **argv){
     char *a = argv[1];
     n = atoi(a);
     nThreadhold = MAX(20, (int) (n*0.75));
-    printf("%d\n", nThreadhold);
 
 #pragma omp parallel
     {
 #pragma omp single
-        result = fib(n, nThreadhold);
+        {
+            double start = omp_get_wtime();
+            result = fib(n, nThreadhold);
+            double end = omp_get_wtime();
+            printf("%.15f\n", end - start);
+        }
     }
-    printf("Result is %d\n", result);
+
+    return 0;
 }

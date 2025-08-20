@@ -8,6 +8,6 @@ Se necesitará tener UV instalado para el entorno virtual con las dependencias, 
 
 Luego, correr:
 ```bash
-uv run jupyter lab analysis.ipynb
+uv run jupyter lab analysisFibonacci.ipynb
 ```
 Para crear el entorno virtual con las dependencias necesarias y visualizar los datos dentro del notebook.

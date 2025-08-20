@@ -7,25 +7,21 @@ int fib(int n) {
 
     int previousToLast = 0, last = 1, aux = 0;
 
-#pragma omp parallel
-    {
-#pragma omp for ordered
-        for (int i = 2; i <= n; i++) {
-#pragma omp ordered
-            {
-                aux = previousToLast + last;
-                previousToLast = last;
-                last = aux;
-            }
-        }
+    for (int i = 2; i <= n; i++) {
+        aux = previousToLast + last;
+        previousToLast = last;
+        last = aux;
     }
-
     return aux;
 }
 
 int main(int argc, char **argv) {
-    int n = atoi(argv[1]);
-    int result = fib(n);
-    printf("Result is %d\n", result);
+    int n, result;
+    n = atoi(argv[1]);
+    double start = omp_get_wtime();
+    result = fib(n);
+    double end = omp_get_wtime();
+    printf("%.15f\n", end - start);
+
     return 0;
 }
