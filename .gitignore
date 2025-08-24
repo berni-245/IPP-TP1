@@ -57,7 +57,10 @@ dkms.conf
 .idea
 .ipynb_checkpoints
 baseFibonacci
-baseQueensPuzzle
 thresholdingFibonacci
 memoizationFibonacci
 iterativeFibonacci
+
+baseQueensPuzzle
+parallelQueensPuzzle
+thresholdingQueensPuzzle

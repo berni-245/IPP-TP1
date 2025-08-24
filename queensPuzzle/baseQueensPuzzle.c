@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
-
-#define N 4
+#include <omp.h>
 
 long long solutions = 0;
+int N;
 
 bool is_safe(int *board, int row, int col) {
     for (int i = 0; i < row; i++) {
@@ -29,11 +30,14 @@ void solve(int row, int *board) {
     }
 }
 
-
-
-int main() {
+int main(int argc, char **argv) {
+    char *a = argv[1];
+    N = atoi(a);
     int board[N];
+    double start = omp_get_wtime();
     solve(0, board);
-    printf("Soluciones para %d reinas: %lld\n", N, solutions);
+    double end = omp_get_wtime();
+    // printf("Soluciones para %d reinas: %lld\n", N, solutions);
+    printf("%.15f\n", end - start);
     return 0;
 }
