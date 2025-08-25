@@ -64,3 +64,5 @@ iterativeFibonacci
 baseQueensPuzzle
 parallelQueensPuzzle
 thresholdingQueensPuzzle
+firstRowQueensPuzzle
+varyingThreadCountQueensPuzzle
