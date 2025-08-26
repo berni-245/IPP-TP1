@@ -1,5 +1,27 @@
 # Introducción a la Programación Paralela TP1
 
+## Instalación
+Se requiere tener OpenMP instalado. Se puede instalar utilizando el siguiente comando:
+```bash
+sudo apt install libomp-dev
+```
+
+## Compilación y Ejecución
+
+Se compila el código usando:
+```bash
+gcc -fopenmp <archivo .c deseado> -o <nombre_output>
+```
+
+Finalmente se ejecuta usando:
+```bash
+./<nombre_output> <args>
+```
+
+Para los códigos en la carpeta fibonacci se requiere poner el número N del N-ésimo número de la serie que se desea obtener.
+Mientras que en los códigos de la carpeta queensPuzzle se requiere poner el número N de reinas que se quiere tener en el tablero NxN. Adicionalmente para el main donde se varía la cantidad de threads se requiere un segundo argumento con dicha cantidad deseada.
+
+
 Este fue el [enunciado](docs/Enunciado%20TP1.pdf).
 
 ## Análisis
